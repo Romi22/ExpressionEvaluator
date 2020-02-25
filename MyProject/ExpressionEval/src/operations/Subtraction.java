@@ -19,7 +19,7 @@ public class Subtraction implements ArithmeticOperations
            a=Double.parseDouble(stack.pop().value);
            b=Double.parseDouble(stack.pop().value);
 
-           result=a-b;
+           result=b-a;
     }
     public double getResult()
     {

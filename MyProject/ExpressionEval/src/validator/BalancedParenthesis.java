@@ -28,9 +28,9 @@ public class BalancedParenthesis extends Validation
               if(i.value.equals("(")||i.value.equals("{")||i.value.equals("["))
                   stack.push(new Token(i.pos,i.type,i.value));
 
-              else if((i.value.equals(")") && stack.peek().value.equals("("))
-                      ||(i.value.equals("]") && stack.peek().value.equals("["))
-                      ||(i.value.equals("}") && stack.peek().value.equals("{")))
+              else if((!stack.isEmpty() && i.value.equals(")") && stack.peek().value.equals("("))
+                      ||(!stack.isEmpty() && i.value.equals("]") && stack.peek().value.equals("["))
+                      ||( !stack.isEmpty() &&i.value.equals("}") && stack.peek().value.equals("{")))
               {
                   stack.pop();
               }
